@@ -1,3 +1,8 @@
+
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 // Theme Toggle Functionality
 const themeToggle = document.querySelector('.theme-toggle');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
@@ -120,3 +125,62 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.project-card, .contact-container').forEach(el => {
     observer.observe(el);
 });
+
+
+
+
+// Updated cursor implementation
+const cursor = document.querySelector('.custom-cursor');
+const cursorDot = document.querySelector('.cursor-dot');
+
+if (!isMobile()) {
+    // Make cursor visible initially
+    cursor.style.opacity = '0.7';
+    cursorDot.style.opacity = '1';
+
+    // Update cursor position
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.display = 'block';
+        cursorDot.style.display = 'block';
+        
+        requestAnimationFrame(() => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+        });
+    });
+
+    // Handle cursor leaving the window
+    document.addEventListener('mouseleave', () => {
+        cursor.style.display = 'none';
+        cursorDot.style.display = 'none';
+    });
+
+    // Handle cursor entering the window
+    document.addEventListener('mouseenter', () => {
+        cursor.style.display = 'block';
+        cursorDot.style.display = 'block';
+    });
+
+    // Scale cursor on clickable elements
+    document.querySelectorAll('a, button, .skill-icon').forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            cursor.style.background = 'transparent';
+            cursor.style.border = '2px solid var(--accent)';
+            cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        });
+
+        element.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            cursor.style.background = 'var(--accent)';
+            cursor.style.border = 'none';
+            cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+        });
+    });
+} else {
+    // Hide custom cursor on mobile devices
+    cursor.style.display = 'none';
+    cursorDot.style.display = 'none';
+}

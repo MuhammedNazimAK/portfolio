@@ -9,6 +9,10 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
@@ -19,6 +23,7 @@
       <div class="nav-content">
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -34,9 +39,13 @@
 
     <div class="mobile-nav">
       <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
+
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
 
     <section id="home">
       <h1 class="hero-title">Hi, I'm Muhammed Nazim AK</h1>
@@ -49,8 +58,110 @@
       </p>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+
+        <div class="skills-container">
+          <!-- Frontend Development -->
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <div class="skill-icons">
+              <div class="skill-item" data-tooltip="JavaScript">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                  alt="JavaScript"
+                />
+              </div>
+              <div class="skill-item" data-tooltip="Angular">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+                  alt="Angular"
+                />
+              </div>
+              <div class="skill-item" data-tooltip="TypeScript">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                  alt="TypeScript"
+                />
+              </div>
+              <div class="skill-item" data-tooltip="Tailwind CSS">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg
+                  "
+                  alt="Tailwind CSS"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend Development -->
+          <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="skill-icons">
+              <div class="skill-item" data-tooltip="Node.js">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                  alt="Node.js"
+                />
+              </div>
+              <div class="skill-item" data-tooltip="Express.js">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                  alt="Express.js"
+                />
+              </div>
+              <div class="skill-item" data-tooltip="MongoDB">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                  alt="MongoDB"
+                />
+              </div>
+              <div class="skill-item" data-tooltip="PostgreSQL">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                  alt="PostgreSQL"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Others -->
+          <div class="skill-category">
+            <h3>Tools & Others</h3>
+            <div class="skill-icons">
+              <div class="skill-item" data-tooltip="Git">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                  alt="Git"
+                />
+              </div>
+              <div class="skill-item" data-tooltip="Figma">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+                  alt="Figma"
+                />
+              </div>
+              <div class="skill-item" data-tooltip="Postman">
+                <img
+                  src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
+                  alt="Postman"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add Resume Button -->
+      <a href="resume/Muhammed_Nazim_AK_Resume.pdf" class="resume-btn" download>
+        <i class="fas fa-file-download"></i>
+        Download Resume
+      </a>
+    </section>
+
     <section id="projects">
-      <h2>Projects</h2>
+      <h2 class="section-title">Projects</h2>
       <div class="project-grid">
         <div class="project-card">
           <video
@@ -104,9 +215,9 @@
               users to create and format blog posts, receive real-time
               notifications for comments and likes, and find content quickly
               with an optimized search system using Trie. Features like
-              bookmarking and author. With a clean
-              and scalable architecture, the platform ensures high performance,
-              reliability, and a seamless experience.
+              bookmarking and author. With a clean and scalable architecture,
+              the platform ensures high performance, reliability, and a seamless
+              experience.
             </p>
             <div class="tech-stack">
               <span class="tech-tag">Angular</span>
@@ -179,14 +290,13 @@
             </div>
           </div>
         </div> -->
-
       </div>
     </section>
 
     <section id="contact">
       <h2>Get in Touch</h2>
       <div class="contact-container">
-        <a href="nachunazim16@gmail.com" class="email-btn">
+        <a href="mailto:nachunazim16@gmail.com" class="email-btn">
           <i class="fas fa-envelope"></i> Email Me
         </a>
         <div class="social-links">
