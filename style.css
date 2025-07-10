@@ -29,9 +29,8 @@
 }
 
 :root {
-  /* Add these with your other custom properties */
-  --navbar-height: 4rem;  /* Adjust this value based on your navbar's actual height */
-  --scroll-padding: calc(var(--navbar-height) + 2rem); /* Extra padding for comfort */
+  --navbar-height: 4rem;  /* Adjust this value based on navbar's actual height */
+  --scroll-padding: calc(var(--navbar-height) + 2rem);
 }
 
 *, *::before, *::after {
@@ -159,13 +158,17 @@ section {
 }
 
 #home {
-  min-height: 100vh;
-  padding: calc(var(--navbar-height) + 2rem) 5% 4rem;
+  min-height: 70vh;
+  padding: calc(var(--navbar-height) + 2rem) 5% 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #skills {
   padding-top: calc(var(--navbar-height) + 1rem);
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
+  min-height: 40vh;
 }
 
 #projects {
@@ -187,33 +190,107 @@ section {
 }
 
 /* Hero Section */
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.hero-left {
+  flex: 0 0 220px;
+}
+
+.hero-right {
+  flex: 1;
+  text-align: left;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
 .hero-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  margin-bottom: clamp(1rem, 3vh, 2rem);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 0.5rem;
   color: var(--text-primary);
   background: linear-gradient(to right, var(--text-primary), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent;
-  animation: titleFade 1s ease-out;
 }
 
 .subtitle {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: 1rem;
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  margin-bottom: clamp(1.5rem, 4vh, 2rem);
-  opacity: 0;
-  animation: fadeUp 1s ease-out forwards 0.5s;
+  margin-bottom: 1rem;
 }
 
 .description {
-  max-width: 600px;
-  margin: 0 auto;
-  opacity: 0;
-  animation: fadeUp 1s ease-out forwards 1s;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.quick-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skill-tag {
+  background: var(--accent);
+  color: var(--bg-primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.location {
+  color: var(--text-primary);
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.hero-actions .resume-btn {
+  margin-top: 0; /* Override the 2rem margin */
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Project Grid */
@@ -235,7 +312,7 @@ section {
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
@@ -450,50 +527,46 @@ section {
 }
 
 .skills-container {
-  display: flex; /* Change from grid to flex */
-  flex-wrap: wrap; /* Allow wrapping for responsiveness */
-  gap: clamp(1rem, 3vw, 2rem); /* Space between skill categories */
-  justify-content: center; /* Center skill categories horizontally */
-  padding: clamp(1rem, 3vh, 2rem) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem 0;
 }
 
 .skill-category {
-  flex: 1 1 300px;
-  background: var(--bg-primary);
-  border-radius: 16px;
-  padding: 2rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 1.5rem;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%; /* Full width by default */
-  max-width: min(400px, 100%); /* Limit maximum width for larger screens */
-  margin: 0 auto;
+  transition: var(--transition-smooth);
 }
 
 .skill-category:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
 .skill-category h3 {
   color: var(--accent);
-  margin-bottom: 1.5rem;
-  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
   text-align: center;
 }
 
 .skill-icons {
-  display: flex; /* Keep flex for horizontal layout */
-  flex-wrap: wrap; /* Allow wrapping of skill items */
-  gap: 1.5rem; /* Space between skill items */
-  justify-content: center; /* Center skill items horizontally */
-  align-items: center; /* Center skill items vertically */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .skill-item {
   position: relative;
-  width: 60px; /* Adjust size as needed */
-  height: 60px; /* Adjust size as needed */
-  transition: transform 0.2s ease;
+  width: 50px;
+  height: 50px;
+  transition: var(--transition-smooth);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -506,18 +579,17 @@ section {
 }
 
 .skill-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
 }
 
-/* Tooltip */
 .skill-item::after {
   content: attr(data-tooltip);
   position: absolute;
-  bottom: -30px;
+  bottom: -25px;
   left: 50%;
   transform: translateX(-50%);
   padding: 4px 8px;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   color: var(--text-primary);
   border-radius: 4px;
   font-size: 0.75rem;
@@ -525,6 +597,7 @@ section {
   pointer-events: none;
   transition: opacity 0.2s ease;
   white-space: nowrap;
+  z-index: 10;
 }
 
 .skill-item:hover::after {
