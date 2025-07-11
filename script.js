@@ -77,6 +77,7 @@ const mobileMenuBtn = document.querySelector('.mobile-menu');
 const mobileNav = document.querySelector('.mobile-nav');
 
 mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('active');
     mobileNav.classList.toggle('active');
 });
 

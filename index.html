@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Muhammed Nazim A K — Software Engineer & Developer Portfolio</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
@@ -17,8 +17,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://raw.githubusercontent.com/devicons/devicon/ca28c779441053191ff11710fe24a9e6c23690d6/icons/devicon/devicon-plain.svg" type="image/svg+xml" />
   </head>
   <body>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden />
+
     <nav class="navbar">
       <div class="nav-content">
         <ul class="nav-links">
@@ -48,95 +52,164 @@
     <div class="cursor-dot"></div>
 
     <section id="home">
-    <div class="hero-container">
-      <div class="hero-left">
-        <div class="hero-photo">
-          <img src="photo/MY_Photo.jpeg" alt="Muhammed Nazim AK" class="profile-image">
+      <div class="hero-container">
+        <div class="hero-left">
+          <div class="hero-photo">
+            <img
+              src="photo/MY_Photo.jpeg"
+              alt="Muhammed Nazim AK"
+              class="profile-image"
+            />
+          </div>
+        </div>
+        <div class="hero-right">
+          <h1 class="hero-title">Muhammed Nazim AK</h1>
+          <p class="subtitle">FULL STACK DEVELOPER</p>
+          <p class="description">
+            Building scalable web applications with modern technologies.
+            Currently open to opportunities and based in Qatar.
+          </p>
+          <div class="quick-skills">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+          <p class="location">📍 Qatar • Seeking opportunities</p>
+          <div class="hero-actions">
+            <a
+              href="resume/Muhammed_Nazim_AK_Resume.pdf"
+              class="resume-btn"
+              download
+            >
+              <i class="fas fa-file-download"></i> Resume
+            </a>
+            <a href="#projects" class="cta-btn">View Work</a>
+          </div>
         </div>
       </div>
-      <div class="hero-right">
-        <h1 class="hero-title">Muhammed Nazim AK</h1>
-        <p class="subtitle">FULL STACK DEVELOPER</p>
-        <p class="description">Building scalable web applications with modern technologies. Currently open to opportunities and based in Qatar.</p>
-        <div class="quick-skills">
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">JavaScript</span>
-        </div>
-        <p class="location">📍 Qatar • Seeking opportunities</p>
-        <div class="hero-actions">
-          <a href="resume/Muhammed_Nazim_AK_Resume.pdf" class="resume-btn" download>
-            <i class="fas fa-file-download"></i> Resume
-          </a>
-          <a href="#projects" class="cta-btn">View Work</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
     <!-- Skills Section -->
     <section id="skills" class="section">
-      <div class="container">
+      <div class="section-content">
         <h2 class="section-title">Skills & Technologies</h2>
-        <div class="skills-container">
-          <!-- Frontend Development -->
-          <div class="skill-category">
+        <div class="skills-horizontal">
+          <!-- Frontend Category -->
+          <div class="skill-category-horizontal">
             <h3>Frontend</h3>
-            <div class="skill-icons">
-              <div class="skill-item" data-tooltip="JavaScript">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+            <div class="skill-row">
+              <div class="skill-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                  alt="JavaScript"
+                />
+                <span>JavaScript</span>
               </div>
-              <div class="skill-item" data-tooltip="TypeScript">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
+              <div class="skill-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                  alt="TypeScript"
+                />
+                <span>TypeScript</span>
               </div>
-              <div class="skill-item" data-tooltip="React.js">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React.js" />
+              <div class="skill-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                  alt="React.js"
+                />
+                <span>React</span>
               </div>
-              <div class="skill-item" data-tooltip="Next.js">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" />
+              <div class="skill-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                  alt="Next.js"
+                />
+                <span>Next.js</span>
               </div>
-              <div class="skill-item" data-tooltip="Tailwind CSS">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS" />
+              <div class="skill-item">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
+                  alt="Tailwind CSS"
+                />
+                <span>Tailwind</span>
               </div>
             </div>
           </div>
-          <!-- Backend Development -->
-          <div class="skill-category">
+
+          <!-- Backend Category -->
+          <div class="skill-category-horizontal">
             <h3>Backend</h3>
-            <div class="skill-icons">
-              <div class="skill-item" data-tooltip="Node.js">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+            <div class="skill-row">
+              <div class="skill-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                  alt="Node.js"
+                />
+                <span>Node.js</span>
               </div>
-              <div class="skill-item" data-tooltip="Express.js">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" />
+              <div class="skill-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                  alt="Express.js"
+                />
+                <span>Express</span>
               </div>
-              <div class="skill-item" data-tooltip="NestJS">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" alt="NestJS" />
+              <div class="skill-item">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/ca28c779441053191ff11710fe24a9e6c23690d6/icons/nestjs/nestjs-original.svg"
+                  alt="NestJS"
+                />
+                <span>NestJS</span>
               </div>
-              <div class="skill-item" data-tooltip="MongoDB">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+              <div class="skill-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                  alt="MongoDB"
+                />
+                <span>MongoDB</span>
               </div>
-              <div class="skill-item" data-tooltip="PostgreSQL">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+              <div class="skill-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                  alt="PostgreSQL"
+                />
+                <span>PostgreSQL</span>
               </div>
             </div>
           </div>
-          <!-- Tools & Cloud -->
-          <div class="skill-category">
+
+          <!-- Tools Category -->
+          <div class="skill-category-horizontal">
             <h3>Tools & Cloud</h3>
-            <div class="skill-icons">
-              <div class="skill-item" data-tooltip="Git">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+            <div class="skill-row">
+              <div class="skill-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                  alt="Git"
+                />
+                <span>Git</span>
               </div>
-              <div class="skill-item" data-tooltip="GitHub">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+              <div class="skill-item">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                  alt="GitHub"
+                />
+                <span>GitHub</span>
               </div>
-              <div class="skill-item" data-tooltip="AWS">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" />
+              <div class="skill-item">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/ca28c779441053191ff11710fe24a9e6c23690d6/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                  alt="AWS"
+                />
+                <span>AWS</span>
               </div>
-              <div class="skill-item" data-tooltip="Postman">
-                <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman" />
+              <div class="skill-item">
+                <img
+                  src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
+                  alt="Postman"
+                />
+                <span>Postman</span>
               </div>
             </div>
           </div>
@@ -145,112 +218,115 @@
     </section>
 
     <section id="projects">
-      <h2 class="section-title">Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <video
-            src="videos/Screencast from 2025-02-20 20-43-44.webm"
-            autoplay
-            loop
-            muted
-            playsinline
-          ></video>
-          <div class="project-content">
-            <h3 class="project-title">E-Commerce Laptop Store</h3>
-            <p>
-              This project is a robust e-commerce platform with admin tools for
-              user management, product and inventory control, and sales
-              reporting. For users, it offers secure registration, social
-              logins, detailed product pages, advanced filtering, cart and
-              checkout management with multiple payment options, and features
-              like wishlists and wallet functionality for a seamless shopping
-              experience.
-            </p>
-            <div class="tech-stack">
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Express.js</span>
-              <span class="tech-tag">MongoDB</span>
-              <span class="tech-tag">Ejs</span>
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">RazorPay</span>
-            </div>
-            <div class="project-links">
-              <a href="https://laptopstore.mooo.com/" target="_blank">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-              <a
-                href="https://github.com/MuhammedNazimAK/E-Commerce_Laptop-Store"
-                target="_blank"
-              >
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
+      <div class="section-content">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
 
-        <div class="project-card">
-          <video src="video2.mp4" autoplay loop muted playsinline></video>
-          <div class="project-content">
-            <h3 class="project-title">Blogging-Platform</h3>
-            <p>
-              This blogging platform offers a smooth user experience. It allows
-              users to create and format blog posts, and find content quickly
-              with an optimized search system using Trie. Features like
-              bookmarking and author. With a clean and scalable architecture,
-              the platform ensures high performance, reliability, and a seamless
-              experience.
-            </p>
-            <div class="tech-stack">
-              <span class="tech-tag">Angular</span>
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Express.js</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">Tailwind CSS</span>
-            </div>
-            <div class="project-links">
-              <!-- <a href="https://another-live-demo.com" target="_blank">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a> -->
-              <a
-                href="https://github.com/MuhammedNazimAK/blogging-platform-frontend"
-                target="_blank"
-              >
-                <i class="fab fa-github"></i> Frontent GitHub
-              </a>
-              <a
-                href="https://github.com/MuhammedNazimAK/blogging-platform"
-                target="_blank"
-              >
-                <i class="fab fa-github"></i> Backend GitHub
-              </a>
+          <div class="project-card">
+            <video
+              src="videos/Screencast from 2025-02-20 20-43-44.webm"
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+            <div class="project-content">
+              <h3 class="project-title">E-Commerce Laptop Store</h3>
+              <p>
+                A full-featured e-commerce platform for laptops, featuring user
+                registration with social login, detailed product listings with
+                advanced filters, and a smooth checkout process supporting
+                multiple payment options. The admin panel includes user
+                management, inventory tracking, order processing, and sales
+                reporting, built with Node.js, Express, MongoDB, and Razorpay
+                integration.
+              </p>
+              <div class="tech-stack">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Ejs</span>
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">RazorPay</span>
+              </div>
+              <div class="project-links">
+                <a href="https://laptopstore.mooo.com/" target="_blank">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a
+                  href="https://github.com/MuhammedNazimAK/E-Commerce_Laptop-Store"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
             </div>
           </div>
+
+          <div class="project-card">
+            <video
+              src=""
+              autoplay
+              loop
+              muted
+              playsinline
+            ></video>
+            <div class="project-content">
+              <h3 class="project-title">
+                Dropnest <span class="in-progress-tag">(In Progress)</span>
+              </h3>
+              <p>
+                Dropnest is a full-stack file storage and sharing web
+                application inspired by Dropbox. It features user authentication
+                with Clerk, secure file uploads, organization with folders and
+                tags, and fast search capabilities. Built using Next.js on the
+                frontend and NestJS with PostgreSQL and Drizzle ORM on the
+                backend, Dropnest is designed for scalability and developer
+                efficiency.
+              </p>
+              <div class="tech-stack">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">NestJS</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Drizzle ORM</span>
+                <span class="tech-tag">Clerk</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Tailwind CSS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://dropnest.example.com" target="_blank">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a
+                  href="https://github.com/MuhammedNazimAK/dropnest"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <h2>Get in Touch</h2>
-      <div class="contact-container">
+      <div class="section-content contact-section">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="contact-text">
+          Open to collaboration, freelance work, or full-time roles. Feel free to reach out.
+        </p>
         <a href="mailto:nachunazim16@gmail.com" class="email-btn">
           <i class="fas fa-envelope"></i> Email Me
         </a>
         <div class="social-links">
-          <a
-            href="https://github.com/MuhammedNazimAK"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://github.com/MuhammedNazimAK" target="_blank" rel="noopener">
             <i class="fab fa-github"></i> GitHub
           </a>
-          <a
-            href="https://www.linkedin.com/in/muhammed-nazim-780130283/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.linkedin.com/in/muhammed-nazim-780130283/" target="_blank" rel="noopener">
             <i class="fab fa-linkedin"></i> LinkedIn
           </a>
         </div>
@@ -259,9 +335,9 @@
 
     <script src="script.js"></script>
 
-<script
-  src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
-  data-app-id="327FC10E-C7B3-427F-B7B3-B327DDFE499F"
-></script>
+    <script
+      src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
+      data-app-id="327FC10E-C7B3-427F-B7B3-B327DDFE499F"
+    ></script>
   </body>
 </html>
