@@ -91,23 +91,6 @@ document.querySelectorAll('.mobile-nav a').forEach(link => {
 // Initialize theme on load
 document.addEventListener('DOMContentLoaded', initializeTheme);
 
-// Project card hover effect
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        const video = card.querySelector('video');
-        if (video) {
-            video.play();
-        }
-    });
-    
-    card.addEventListener('mouseleave', () => {
-        const video = card.querySelector('video');
-        if (video) {
-            video.pause();
-        }
-    });
-});
-
 // Intersection Observer for fade-in animations
 const observerOptions = {
     threshold: 0.1,
@@ -126,8 +109,6 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.project-card, .contact-container').forEach(el => {
     observer.observe(el);
 });
-
-
 
 
 // Updated cursor implementation
