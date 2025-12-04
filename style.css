@@ -164,7 +164,7 @@ section {
 
 #contact {
   padding-top: calc(var(--navbar-height) + 2rem);
-  padding-bottom: 4rem;
+  padding-bottom: 0rem;
   text-align: center;
 }
 
