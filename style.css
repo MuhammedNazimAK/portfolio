@@ -13,13 +13,17 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-  /* Default dark theme */
+  --bg-primary: var(--primary-light);
+  --bg-secondary: var(--secondary-light);
+  --text-primary: var(--text-light);
+  --accent: var(--accent-light);
+}
+
+[data-theme="dark"] {
   --bg-primary: var(--primary-dark);
   --bg-secondary: var(--secondary-dark);
   --text-primary: var(--text-dark);
   --accent: var(--accent-dark);
-  --navbar-height: 4rem;
-  --scroll-padding: calc(var(--navbar-height) + 2rem);
 }
 
 [data-theme="light"] {
@@ -53,7 +57,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: var(--transition-smooth);
-  cursor: none; /* intentional for custom cursor */
+  cursor: none; 
   min-width: 320px;
 }
 
@@ -214,7 +218,6 @@ section {
 
 .hero-title {
   font-size: clamp(2rem, 4vw, 2.8rem);
-  margin-bottom: 0.5rem;
   color: var(--text-primary);
   background: linear-gradient(to right, var(--text-primary), var(--accent));
   -webkit-background-clip: text;
@@ -222,12 +225,24 @@ section {
   background-clip: text;
 }
 
+.hero-meta {
+  display: flex;
+}
+
 .subtitle {
-  font-size: 1rem;
+  font-size: 1.0rem;
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin-bottom: 1rem;
+}
+
+.location {
+  color: var(--text-primary);
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  margin-left: 0.9rem;
+  font-size: 1.0rem;
 }
 
 .description {
@@ -252,13 +267,6 @@ section {
   font-weight: 600;
 }
 
-.location {
-  color: var(--text-primary);
-  opacity: 0.8;
-  margin-bottom: 2rem;
-  font-size: 0.95rem;
-}
-
 .hero-actions {
   margin-top: 30px;
   display: flex;
@@ -267,6 +275,30 @@ section {
 
 .hero-actions .resume-btn {
   margin-top: 0;
+}
+
+/* Resume Button */
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: var(--bg-primary);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.resume-btn i {
+  font-size: 1.2rem;
 }
 
 .cta-btn {
@@ -286,7 +318,7 @@ section {
 .cta-btn:hover {
   background: var(--accent);
   color: var(--bg-primary);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -543,30 +575,6 @@ section {
   justify-content: flex-start;
 }
 
-/* Resume Button */
-.resume-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--accent);
-  color: var(--bg-primary);
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 2rem;
-  transition: all 0.3s ease;
-}
-
-.resume-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.resume-btn i {
-  font-size: 1.2rem;
-}
-
 /* Mobile Menu */
 .mobile-menu {
   display: none;
@@ -600,8 +608,8 @@ section {
   transform: translateX(100%);
   transition: var(--transition-smooth);
   min-height: 100vh;
-  min-height: 100dvh; /* For mobile viewport height support */
-  z-index: 999; /* Ensure mobile nav is above other content */
+  min-height: 100dvh;
+  z-index: 999;
 }
 
 .mobile-nav.active {
@@ -711,6 +719,10 @@ img {
 
   .hero-right {
     text-align: center;
+  }
+
+  .hero-meta {
+    justify-content: center;
   }
 
   .quick-skills {

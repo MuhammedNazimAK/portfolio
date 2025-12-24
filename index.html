@@ -3,7 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Muhammed Nazim A K — Software Engineer & Developer Portfolio</title>
+    <title>Developer Portfolio</title>
+
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme) {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+          return;
+        }
+
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
@@ -16,7 +33,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
     <link
       rel="icon"
       href="https://raw.githubusercontent.com/devicons/devicon/ca28c779441053191ff11710fe24a9e6c23690d6/icons/devicon/devicon-plain.svg"
@@ -67,7 +83,12 @@
         </div>
         <div class="hero-right">
           <h1 class="hero-title">Muhammed Nazim AK</h1>
-          <p class="subtitle">FULL STACK DEVELOPER</p>
+
+          <div class="hero-meta">
+            <p class="subtitle">FULL STACK DEVELOPER</p>
+            <p class="location">From India</p>
+          </div>
+
           <p class="description">
             I enjoy building web applications and learning new technologies
             along the way. Open to remote opportunities.

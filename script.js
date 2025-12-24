@@ -23,22 +23,27 @@ function updateThemeToggleIcon(theme) {
     const icon = themeToggle.querySelector('i');
     const text = themeToggle.querySelector('span');
     
-    if (theme === 'light') {
-        icon.className = 'fas fa-moon';
-        text.textContent = 'Dark Mode';
-    } else {
+      if (theme === 'dark') {
         icon.className = 'fas fa-sun';
         text.textContent = 'Light Mode';
-    }
+    } else {
+        icon.className = 'fas fa-moon';
+        text.textContent = 'Dark Mode';
+  }
 }
 
+updateThemeToggleIcon(
+  document.documentElement.getAttribute('data-theme') || 'light'
+);
+
 themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark'
+      ? 'light'
+      : 'dark';
     
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeToggleIcon(newTheme);
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    localStorage.setItem('theme', currentTheme);
+    updateThemeToggleIcon(currentTheme);
 });
 
 // Smooth Scroll for Navigation Links
@@ -111,7 +116,6 @@ document.querySelectorAll('.project-card, .contact-container').forEach(el => {
 });
 
 
-// Updated cursor implementation
 const cursor = document.querySelector('.custom-cursor');
 const cursorDot = document.querySelector('.cursor-dot');
 
@@ -162,7 +166,7 @@ if (!isMobile()) {
         });
     });
 } else {
-    // Hide custom cursor on mobile devices
+
     cursor.style.display = 'none';
     cursorDot.style.display = 'none';
 }
