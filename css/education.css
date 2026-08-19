@@ -1,0 +1,47 @@
+#education {
+  padding: 2rem 5% 2.5rem;
+}
+
+.education-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.education-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-secondary);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.education-main h3 {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.education-main a,
+.education-main span {
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.education-main a:hover {
+  text-decoration: underline;
+}
+
+.education-date {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  opacity: 0.7;
+  white-space: nowrap;
+}
