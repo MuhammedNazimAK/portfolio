@@ -1,172 +1,88 @@
+const themeToggle = document.querySelector(".theme-toggle");
 
-function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
-// Theme Toggle Functionality
-const themeToggle = document.querySelector('.theme-toggle');
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-// Initialize theme
 function initializeTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        updateThemeToggleIcon(savedTheme);
-    } else if (prefersDarkScheme.matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        updateThemeToggleIcon('dark');
-    }
+  const currentTheme =
+    document.documentElement.getAttribute("data-theme") || "light";
+  updateThemeToggleIcon(currentTheme);
 }
 
 function updateThemeToggleIcon(theme) {
-    const icon = themeToggle.querySelector('i');
-    const text = themeToggle.querySelector('span');
-    
-      if (theme === 'dark') {
-        icon.className = 'fas fa-sun';
-        text.textContent = 'Light Mode';
-    } else {
-        icon.className = 'fas fa-moon';
-        text.textContent = 'Dark Mode';
+  const icon = themeToggle.querySelector("i");
+  const text = themeToggle.querySelector("span");
+
+  if (theme === "dark") {
+    icon.className = "fas fa-sun";
+    text.textContent = "Light Mode";
+  } else {
+    icon.className = "fas fa-moon";
+    text.textContent = "Dark Mode";
   }
 }
 
-updateThemeToggleIcon(
-  document.documentElement.getAttribute('data-theme') || 'light'
-);
+themeToggle.addEventListener("click", () => {
+  const currentTheme =
+    document.documentElement.getAttribute("data-theme") === "dark"
+      ? "light"
+      : "dark";
 
-themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark'
-      ? 'light'
-      : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    localStorage.setItem('theme', currentTheme);
-    updateThemeToggleIcon(currentTheme);
+  document.documentElement.setAttribute("data-theme", currentTheme);
+  localStorage.setItem("theme", currentTheme);
+  updateThemeToggleIcon(currentTheme);
 });
 
 // Smooth Scroll for Navigation Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  });
 });
 
 // Navbar Scroll Effect
-const navbar = document.querySelector('.navbar');
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll <= 0) {
-        navbar.style.boxShadow = 'none';
-    } else {
-        navbar.style.boxShadow = 'var(--shadow-md)';
-    }
-    
-    lastScroll = currentScroll;
+const navbar = document.querySelector(".navbar");
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll <= 0) {
+    navbar.style.boxShadow = "none";
+  } else {
+    navbar.style.boxShadow = "var(--shadow-md)";
+  }
 });
 
-// Mobile Menu Toggle
-const mobileMenuBtn = document.querySelector('.mobile-menu');
-const mobileNav = document.querySelector('.mobile-nav');
-
-mobileMenuBtn.addEventListener('click', () => {
-    mobileMenuBtn.classList.toggle('active');
-    mobileNav.classList.toggle('active');
+const mobileMenuBtn = document.querySelector(".mobile-menu");
+const mobileNav = document.querySelector(".mobile-nav");
+mobileMenuBtn.addEventListener("click", () => {
+  mobileMenuBtn.classList.toggle("active");
+  mobileNav.classList.toggle("active");
+});
+document.querySelectorAll(".mobile-nav a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileNav.classList.remove("active");
+  });
 });
 
-// Close mobile menu when clicking a link
-document.querySelectorAll('.mobile-nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileNav.classList.remove('active');
-    });
-});
-
-// Initialize theme on load
-document.addEventListener('DOMContentLoaded', initializeTheme);
+document.addEventListener("DOMContentLoaded", initializeTheme);
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px",
 };
-
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-        }
-    });
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("fade-in");
+      observer.unobserve(entry.target);
+    }
+  });
 }, observerOptions);
-
-document.querySelectorAll('.project-card, .contact-container').forEach(el => {
-    observer.observe(el);
+document.querySelectorAll(".project-card, .contact-section").forEach((el) => {
+  observer.observe(el);
 });
-
-
-const cursor = document.querySelector('.custom-cursor');
-const cursorDot = document.querySelector('.cursor-dot');
-
-if (!isMobile()) {
-    // Make cursor visible initially
-    cursor.style.opacity = '0.7';
-    cursorDot.style.opacity = '1';
-
-    // Update cursor position
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.display = 'block';
-        cursorDot.style.display = 'block';
-        
-        requestAnimationFrame(() => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            cursorDot.style.left = e.clientX + 'px';
-            cursorDot.style.top = e.clientY + 'px';
-        });
-    });
-
-    // Handle cursor leaving the window
-    document.addEventListener('mouseleave', () => {
-        cursor.style.display = 'none';
-        cursorDot.style.display = 'none';
-    });
-
-    // Handle cursor entering the window
-    document.addEventListener('mouseenter', () => {
-        cursor.style.display = 'block';
-        cursorDot.style.display = 'block';
-    });
-
-    // Scale cursor on clickable elements
-    document.querySelectorAll('a, button, .skill-icon').forEach(element => {
-        element.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-            cursor.style.background = 'transparent';
-            cursor.style.border = '2px solid var(--accent)';
-            cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        });
-
-        element.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-            cursor.style.background = 'var(--accent)';
-            cursor.style.border = 'none';
-            cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
-        });
-    });
-} else {
-
-    cursor.style.display = 'none';
-    cursorDot.style.display = 'none';
-}
